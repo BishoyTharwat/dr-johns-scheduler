@@ -21,7 +21,7 @@ const CTASection = () => {
                 Book Online
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-blue-600">
+            <Button asChild variant="outline" size="lg" className="border-white text-clinic-blue hover:bg-blue-600">
               <a href="tel:+11234567890">
                 <Phone size={18} className="mr-2" />
                 Call Us Now
