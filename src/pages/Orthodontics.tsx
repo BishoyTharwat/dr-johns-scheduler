@@ -1,0 +1,132 @@
+
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import { CheckCircle, Shield, Clock, Award } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+
+const Orthodontics = () => {
+  const services = [
+    "Traditional Metal Braces",
+    "Clear Ceramic Braces",
+    "Invisalign Clear Aligners",
+    "Lingual Braces",
+    "Retainers",
+    "Bite Correction",
+    "Space Maintainers",
+    "Early Intervention Treatment"
+  ];
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <main className="flex-grow">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-r from-green-50 to-blue-50 py-16">
+          <div className="container mx-auto px-4">
+            <div className="text-center">
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                <span className="text-clinic-blue">Orthodontics</span>
+              </h1>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Straighten your teeth and perfect your bite with our comprehensive orthodontic treatments. From traditional braces to modern clear aligners.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Main Content */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+              <div>
+                <h2 className="text-3xl font-bold text-gray-800 mb-6">Straighten Your Smile</h2>
+                <p className="text-gray-600 mb-6">
+                  Orthodontics is a specialized field of dentistry that focuses on diagnosing, preventing, and treating dental and facial irregularities, including crooked teeth and improper bites.
+                </p>
+                <p className="text-gray-600 mb-8">
+                  Our orthodontic treatments not only improve the appearance of your smile but also enhance your oral health by making teeth easier to clean and reducing the risk of dental problems.
+                </p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="flex items-center">
+                    <Shield className="text-clinic-blue mr-3" size={24} />
+                    <span className="text-gray-700">Advanced Technology</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Clock className="text-clinic-blue mr-3" size={24} />
+                    <span className="text-gray-700">Efficient Treatment</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Award className="text-clinic-blue mr-3" size={24} />
+                    <span className="text-gray-700">Expert Care</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="text-clinic-blue mr-3" size={24} />
+                    <span className="text-gray-700">Lasting Results</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gray-50 rounded-lg p-8">
+                <h3 className="text-2xl font-bold text-gray-800 mb-6">Treatment Options:</h3>
+                <ul className="space-y-3">
+                  {services.map((service, index) => (
+                    <li key={index} className="flex items-center">
+                      <CheckCircle className="text-green-500 mr-3 flex-shrink-0" size={20} />
+                      <span className="text-gray-700">{service}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-8 p-4 bg-clinic-blue/10 rounded-lg">
+                  <p className="text-clinic-blue font-semibold">Starting at $2,500</p>
+                  <p className="text-gray-600 text-sm">Complete orthodontic treatment</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Treatment Process */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-gray-800 mb-12 text-center">Treatment Process</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="bg-clinic-blue text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+                <h3 className="text-xl font-semibold mb-2">Consultation</h3>
+                <p className="text-gray-600">Initial examination and treatment planning</p>
+              </div>
+              <div className="text-center">
+                <div className="bg-clinic-blue text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+                <h3 className="text-xl font-semibold mb-2">Treatment</h3>
+                <p className="text-gray-600">Regular adjustments and monitoring progress</p>
+              </div>
+              <div className="text-center">
+                <div className="bg-clinic-blue text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+                <h3 className="text-xl font-semibold mb-2">Retention</h3>
+                <p className="text-gray-600">Maintaining results with retainers</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Ready to Start Your Orthodontic Journey?</h2>
+            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+              Schedule a consultation to discuss your orthodontic options and create a personalized treatment plan.
+            </p>
+            <Button asChild size="lg" className="bg-clinic-blue hover:bg-blue-600">
+              <Link to="/book-appointment">Schedule Consultation</Link>
+            </Button>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default Orthodontics;
