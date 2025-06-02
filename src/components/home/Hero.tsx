@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import image from "../../../assets/photo-smiling-dentist-standing-with-arms-crossed-with-her-colleague-showing-okay-sign.jpg";
+import image from "../../../public/assets/photo-smiling-dentist-standing-with-arms-crossed-with-her-colleague-showing-okay-sign.jpg";
 const Hero = () => {
   return (
     <section className="bg-gradient-to-r from-blue-50 to-blue-100 py-16 md:py-24">
